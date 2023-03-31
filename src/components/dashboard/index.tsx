@@ -112,13 +112,7 @@ export default function Dashboard() {
                     >
                       <EditIcon fontSize="inherit" />
                     </button>
-                    <button
-                      onClick={() => {
-                        dispatch(removeTodo(todo));
-                        console.log(todos);
-                        localStorage.setItem('todoList', JSON.stringify(todos));
-                      }}
-                    >
+                    <button onClick={() => dispatch(removeTodo(todo))}>
                       <CloseIcon fontSize="small" />
                     </button>
                   </div>

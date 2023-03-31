@@ -10,7 +10,7 @@ export default function ProgressBar({
       {...props}
       className="relative border flex flex-col justify-center w-full sm:w-1/2"
     >
-      <p className="absolute left-[84.11px] sm:left-[25%] text-center text-sm text-[#787773]">
+      <p className="absolute left-[25%] sm:left-[25%] text-center text-sm text-[#787773]">
         <span className="font-semibold">{current}</span> of{' '}
         <span className="font-semibold">{total}</span> tasks done
       </p>

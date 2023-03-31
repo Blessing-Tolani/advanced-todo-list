@@ -6,17 +6,7 @@ export interface todoState {
   completed: boolean;
 }
 
-let initialState: todoState[] = [
-  // {
-  //   id: 40,
-  //   item: 'eyy',
-  //   completed: false,
-  // },
-];
-
-// if (localStorage.getItem('todoList')) {
-//   initialState = JSON.parse(localStorage.getItem('todoList')!);
-// }
+let initialState: todoState[] = [];
 
 export const todoReducer = createSlice({
   name: 'todos',
@@ -25,7 +15,6 @@ export const todoReducer = createSlice({
     //add todo
     addTodo: (state, action) => {
       state.push(action.payload);
-
       return state;
     },
 
