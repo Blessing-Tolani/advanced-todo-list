@@ -19,3 +19,7 @@ code {
 .todo-input {
   box-shadow: 0 0 3px 2px #fffde0;
 }
+
+.checkbox {
+  accent-color: rgba(233, 233, 233);
+}

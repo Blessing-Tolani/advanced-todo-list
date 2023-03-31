@@ -1,19 +1,77 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const initialState: any = [];
+export interface todoState {
+  id: number;
+  item: string;
+  completed: boolean;
+}
 
-const todoReducer = createSlice({
+let initialState: todoState[] = [
+  // {
+  //   id: 40,
+  //   item: 'eyy',
+  //   completed: false,
+  // },
+];
+
+// if (localStorage.getItem('todoList')) {
+//   initialState = JSON.parse(localStorage.getItem('todoList')!);
+// }
+
+export const todoReducer = createSlice({
   name: 'todos',
   initialState,
   reducers: {
-    //here we will write our reducer
-    //Adding todos
-    addTodos: (state, action) => {
+    //add todo
+    addTodo: (state, action) => {
       state.push(action.payload);
+
       return state;
+    },
+
+    //edit todo
+    editTodo: (state, action) => {
+      return state.map((todo) => {
+        if (todo.id === action.payload.id) {
+          return {
+            ...todo,
+            item: action.payload.item,
+          };
+        }
+        return todo;
+      });
+    },
+
+    //complete todo
+    completeTodo: (state, action) => {
+      return state.map((todo) => {
+        if (todo.id === action.payload.id) {
+          return {
+            ...todo,
+            completed: !todo.completed,
+          };
+        }
+        return todo;
+      });
+    },
+
+    //remove completed todo
+    removeCompletedTodo: (state) => {
+      return state.filter((todo) => todo.completed === false);
+    },
+
+    //remove todo
+    removeTodo: (state, action) => {
+      return state.filter((todo) => todo.id !== action.payload.id);
     },
   },
 });
 
-export const { addTodos } = todoReducer.actions;
+export const {
+  addTodo,
+  editTodo,
+  completeTodo,
+  removeCompletedTodo,
+  removeTodo,
+} = todoReducer.actions;
 export default todoReducer.reducer;

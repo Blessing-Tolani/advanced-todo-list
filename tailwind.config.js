@@ -6,6 +6,9 @@ module.exports = {
       colors: {
         primary: '#489CC1',
       },
+      screens: {
+        smMax: { max: '639px' },
+      },
     },
   },
   plugins: [],
