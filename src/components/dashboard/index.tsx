@@ -2,7 +2,7 @@ import AddIcon from '@mui/icons-material/Add';
 import DoneIcon from '@mui/icons-material/Done';
 import EditIcon from '@mui/icons-material/Edit';
 import CloseIcon from '@mui/icons-material/Close';
-import type { RootState } from '../../app/store';
+import { RootState } from '../../app/store';
 import { useSelector, useDispatch } from 'react-redux';
 import { useState, useRef } from 'react';
 import {
