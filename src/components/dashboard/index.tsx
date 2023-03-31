@@ -17,7 +17,6 @@ import ProgressBar from '../progress-bar';
 export default function Dashboard() {
   const dispatch = useDispatch();
   const todos = useSelector((state: RootState) => state.todos);
-  console.log(todos);
   const [todo, setTodo] = useState('');
   // used -1 as initial value because no todo can have an id of -1
   const [todoId, setTodoId] = useState(-1);
